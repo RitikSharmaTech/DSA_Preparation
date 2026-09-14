@@ -1,0 +1,19 @@
+package Loop;
+
+import java.util.Scanner;
+
+public class APowerB {
+    static void main() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the value of a numbers:");
+        int a = sc.nextInt();
+        System.out.print("Enter the value of b numbers:");
+        int b = sc.nextInt();
+
+        int sum = 1;
+        for(int i=1; i<=b; i++) {
+            sum = sum * a;
+        }
+        System.out.println(sum);
+    }
+}
