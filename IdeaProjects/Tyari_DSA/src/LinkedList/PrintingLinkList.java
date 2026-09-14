@@ -1,13 +1,13 @@
 package LinkedList;
 
-class Node {
-    int val;
-    Node next;
-
-    Node(int val) {
-        this.val = val;
-    }
-}
+//class Node {
+//    int val;
+//    Node next;
+//
+//    Node(int val) {
+//        this.val = val;
+//    }
+//}
 public class PrintingLinkList {
 
     static void DisplayRecursion(Node head){
