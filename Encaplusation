@@ -1,0 +1,30 @@
+package OOPS;
+
+class Student{
+    private int rollNo;
+    private String name;
+    private double percentage;
+
+    public void setStudent(int r, String n, double p){
+        rollNo = r;
+        name = n;
+        percentage = p;
+    }
+    public void showStudent(Student s){
+        System.out.println("Roll no "+ s.rollNo);
+        System.out.println("name "+ s.name);
+        System.out.println("percentage "+ s.percentage);
+    }
+}
+
+public class UseEncapsulation {
+    static void main() {
+        Student s = new Student();
+        s.setStudent(101,"Rohan",87.5);
+        s.showStudent(s);
+
+        Student p = new Student();
+        p.setStudent(102,"Robin",78.4);
+        s.showStudent(s);
+    }
+}
