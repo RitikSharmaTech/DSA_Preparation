@@ -1,0 +1,49 @@
+package BinaryTree;
+
+class Node{
+    Node left;
+    Node right;
+    int val;
+    Node(int val){
+        this.val = val;
+    }
+        }
+public class Basic {
+    private static void display(Node root){
+        if(root==null) return;
+
+        System.out.print(root.val+" ");
+        display(root.left);
+        display(root.right);
+    }
+    private static int size(Node root){
+        if(root==null) return 0;
+
+        return 1 + size(root.left)+ size(root.right);
+    }
+    private static int sum(Node root){
+        if(root==null) return 0;
+
+        int sum1 = sum(root.left);
+        int sum2 = sum(root.right);
+
+        return root.val+sum1+sum2;
+    }
+    public static void main(String[] args){
+        Node a = new Node(3);   //root Node
+        Node b = new Node(4);
+        Node c = new Node(2);
+        Node e = new Node(-1);
+        Node f = new Node(1);
+        Node g = new Node(6);
+        Node h = new Node(9);
+        a.left = b; a.right = c;
+        b.left = e; b.right = f;
+        c.left = g; c.right = h;
+
+        display(a);
+        System.out.println();
+        System.out.println("Size of tree = " +size(a));
+        System.out.println("Sum of binary tree values = " +sum(a));
+    }
+}
