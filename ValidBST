@@ -1,0 +1,27 @@
+class Pair{
+    Long max;
+    Long min;
+    Pair(Long max, Long min){
+        this.max=max;
+        this.min=min;
+    }
+}
+
+class Solution {
+    static boolean flag;
+    public boolean isValidBST(TreeNode root) {
+        flag = true;
+        maxMin(root);
+        return flag;
+    }
+    Pair maxMin(TreeNode root){
+        if(root==null) return new Pair(Long.MIN_VALUE, Long.MAX_VALUE);
+        Pair left = maxMin(root.left);
+        Pair right = maxMin(root.right);
+        Long val = (long)root.val;
+        Long max = Math.max(val, Math.max(left.max,right.max));
+         Long min = Math.min(val, Math.min(left.min,right.min));
+         if(left.max>=val || right.min <= val) flag = false;
+         return new Pair(max,min);
+    }
+}
