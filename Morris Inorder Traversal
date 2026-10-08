@@ -1,0 +1,39 @@
+class Solution {
+    public void morrisInorder(TreeNode root) {
+
+        TreeNode curr = root;
+
+        while (curr != null) {
+
+            // Left child nahi hai
+            if (curr.left == null) {
+                System.out.print(curr.val + " ");
+                curr = curr.right;
+            }
+
+            // Left child hai
+            else {
+                TreeNode predecessor = curr.left;
+
+                // Rightmost node in left subtree
+                while (predecessor.right != null &&
+                       predecessor.right != curr) {
+                    predecessor = predecessor.right;
+                }
+
+                // Thread create karo
+                if (predecessor.right == null) {
+                    predecessor.right = curr;
+                    curr = curr.left;
+                }
+
+                // Thread already present
+                else {
+                    predecessor.right = null;
+                    System.out.print(curr.val + " ");
+                    curr = curr.right;
+                }
+            }
+        }
+    }
+}
