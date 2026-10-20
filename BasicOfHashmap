@@ -1,0 +1,13 @@
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Ram");
+        map.put(2, "Shyam");
+        map.put(3, "Mohan");
+
+        System.out.println(map);
+    }
+}
